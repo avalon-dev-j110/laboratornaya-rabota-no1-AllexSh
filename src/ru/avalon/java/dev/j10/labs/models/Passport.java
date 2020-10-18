@@ -1,4 +1,6 @@
+
 package ru.avalon.java.dev.j10.labs.models;
+import ru.avalon.java.dev.j10.labs.commons.*;
 
 /**
  * Представление о паспортных данных человека.
@@ -15,8 +17,8 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
-
+public class Passport extends Address {
+	
     /*
      * TODO(Студент): Закончить определение класса.
      *
@@ -37,4 +39,32 @@ class Passport {
      * 5. Обеспечте возможность использования класса за
      *    пределами пакета.
      */
+		int intPassS, intPassN; // серия, номер паспорта
+		String strName, strSurName, strMidName, strSecName, strBday, strRecDate, strGov;
+		// имя, фамилия, отчество, второе имя, дата рождения, дата выдачи, орган выдачи
+		
+		
+		//три перегрузки конструктора для всех случаев задачи
+		public Passport(String strName, String strSurName, String strMidName,String strAdr) {
+			this.strName = strName; 
+			this.strSurName = strSurName; 
+			this.strMidName = strMidName; 
+			super.strAdr = strAdr;//переменная адреса
+			}
+		public Passport(String strName, String strSecName, String strSurName, int intPassS, String strAdr) {
+			this.strName = strName;
+			this.strSecName = strSecName;
+			this.strSurName = strSurName;
+			this.intPassS = intPassS;// доп инициализация для избежания конфликта создания одинаковых конструкторов
+			super.strAdr = strAdr;
+			}
+		public Passport(String strName,String strSurName, String strAdr) {
+			this.strName = strName;
+			this.strSurName = strSurName;
+			super.strAdr = strAdr;
+			}
+		
 }
+		
+
+

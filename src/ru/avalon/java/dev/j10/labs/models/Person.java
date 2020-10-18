@@ -1,5 +1,6 @@
-package ru.avalon.java.dev.j10.labs.models;
 
+package ru.avalon.java.dev.j10.labs.models;
+//import ru.avalon.java.dev.j10.labs.commons.*;
 /**
  * Представление о человеке.
  * <p>
@@ -10,9 +11,23 @@ package ru.avalon.java.dev.j10.labs.models;
  *     <li>пропиской по месту жительства.
  * </ol>
  */
-public class Person {
+public class Person extends Passport{
 
-    /**
+	String fullName;// пременная для форматированного текста
+	
+    public Person(String strName, String strSurName, String strMidName, String strAdr) {
+		super(strName, strSurName, strMidName, strAdr);
+    }
+	public Person(String strName, String strSecName, String strSurName, int intPassS, String strAdr) {
+		super(strName, strSecName, strSurName, intPassS, strAdr);
+	}
+	public Person(String strName,String strSurName, String strAdr) {
+		super(strName, strSurName, strAdr);
+	}
+		// TODO Auto-generated constructor stub
+	
+
+	/**
      * Возврвщает полное имя человека.
      * <p>
      * Если у человека есть Имя, Фамилия и Отчество, то
@@ -29,11 +44,19 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
-    public String getFullName() {
+	
+	    public String getFullName() {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        //return null;
+	    	if (strSecName == null & strMidName != null) 			//если второго имени нет и есть очество
+	    		fullName = strName + "\n" + strSurName + "\n" + strMidName;
+	    	else if (strMidName == strSecName) 						//если есть только имя и фамилия
+	    		fullName = strName + "\n" + strSurName;
+	    	else 													//если есть только второе имя
+	    		fullName = strName + "\n" + strSecName.charAt(0)+"." + "\n" + strSurName;
+	    	return fullName;
     }
 
     /**
@@ -48,6 +71,7 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+        //return null;
+    	return strAdr;
     }
 }

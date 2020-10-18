@@ -1,3 +1,5 @@
+
+package ru.avalon.java.dev.j10.labs.commons;
 /*
  * TODO(Студент): Создайте класс Address.
  *
@@ -13,3 +15,7 @@
  * 4. Подумайте над тем, какие методы должны быть объявлены
  *    в классе.
  */
+public class Address {
+	public String strAdr = " "; //класс адрес хранит только переменную адреса
+	
+}
