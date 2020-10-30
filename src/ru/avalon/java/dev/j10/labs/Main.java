@@ -1,17 +1,40 @@
-package ru.avalon.java.dev.j10.labs;
 
+package ru.avalon.java.dev.j10.labs;
+import ru.avalon.java.dev.j10.labs.commons.*;
+import ru.avalon.java.dev.j10.labs.models.Passport;
 import ru.avalon.java.dev.j10.labs.models.Person;
 
-public class Main {
 
+
+public class Main {
+	public static void main (String[] args) {
+		
     /*
      * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
      */
-    Main() {
+    //Main() {
+		Address ivanovAdr = new Address("Хрустицкого", "14");
+		Passport ivanovPass = new Passport ("Иван", "Иванов", "Иванович");
+        Person ivanov = new Person (ivanovAdr, ivanovPass);
+        
+                System.out.println(ivanov.getFullName());
+                System.out.println(ivanovAdr.getStrAdr());
+                
+        Address smithAdr = new Address("st.James ave.", "43");
+        Passport smithPass = new Passport ("John", "Edvard", "Smith", 4224);
+        Person smith = new Person (smithAdr, smithPass);        
 
-        Person ivanov = null;
-        Person smith = null;
+                System.out.println(smith.getFullName());
+                System.out.println(smithAdr.getStrAdr());
+                
+        Address wienerAdr = new Address("North Alpine Drive", "116");
+        Passport wienerPass = new Passport ("Norbert", "Wiener");
+        Person wiener = new Person (wienerAdr, wienerPass);       
 
+                System.out.println(wiener.getFullName());
+                System.out.println(wienerAdr.getStrAdr());
+	}
+}
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *
@@ -50,5 +73,3 @@ public class Main {
          * Значение каждой переменной должно быть выведено на
          * отдельной строке.
          */
-    }
-}
