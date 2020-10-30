@@ -1,5 +1,6 @@
 
 package ru.avalon.java.dev.j10.labs;
+import ru.avalon.java.dev.j10.labs.commons.*;
 import ru.avalon.java.dev.j10.labs.models.Person;
 
 
@@ -12,20 +13,20 @@ public class Main {
      */
     //Main() {
 
-        Person ivanov = new Person ("Иван", "Иванов", "Иванович", "Хрустицкого 14");
-        
+        Person ivanov = new Person ("Иван", "Иванов", "Иванович","Хрустицкого", "14"); // "Хрустицкого 14"
+        Address ivanovAdr = new Address("Хрустицкого", "14");
                 System.out.println(ivanov.getFullName());
-                System.out.println(ivanov.getAddress());
+                System.out.println(ivanovAdr.getStrAdr());
                 
-        Person smith = new Person ("John", "Edvard", "Smith", 4224, "st.James ave. 43");
-        
+        Person smith = new Person ("John", "Edvard", "Smith", 4224, "st.James ave.", "43"); //"st.James ave. 43"
+        Address smithAdr = new Address("st.James ave.", "43");
                 System.out.println(smith.getFullName());
-                System.out.println(smith.getAddress());
+                System.out.println(smithAdr.getStrAdr());
                 
-        Person wiener = new Person ("Norbert", "Wiener", "North Alpine Drive 116");
-                
+        Person wiener = new Person ("Norbert", "Wiener", "North Alpine Drive", "116"); //"North Alpine Drive 116"
+        Address wienerAdr = new Address("North Alpine Drive", "116");
                 System.out.println(wiener.getFullName());
-                System.out.println(wiener.getAddress());
+                System.out.println(wienerAdr.getStrAdr());
 	}
 }
         /*

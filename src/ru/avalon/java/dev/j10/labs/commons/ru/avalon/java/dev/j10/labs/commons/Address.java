@@ -1,5 +1,6 @@
 
 package ru.avalon.java.dev.j10.labs.commons;
+
 /*
  * TODO(Студент): Создайте класс Address.
  *
@@ -16,6 +17,22 @@ package ru.avalon.java.dev.j10.labs.commons;
  *    в классе.
  */
 public class Address {
-	public String strAdr = " "; //класс адрес хранит только переменную адреса
-	
+	private String strStreet;
+	private String strHouse;
+	private String strAdr;
+
+	public Address (String strStreet, String strHouse){
+		this.strStreet = strStreet;
+		this.strHouse = strHouse;
+	}
+	public String getStrAdr() {
+		strAdr = strStreet +" "+ strHouse;
+		return strAdr;
+	}
+	public void setStrHouse(String strHouse) {
+		this.strHouse = strHouse;
+	}
+	public void setStrStreet(String strStreet) {
+		this.strStreet = strStreet;
+	}
 }
