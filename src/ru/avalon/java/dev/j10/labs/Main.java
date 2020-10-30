@@ -1,6 +1,7 @@
 
 package ru.avalon.java.dev.j10.labs;
 import ru.avalon.java.dev.j10.labs.commons.*;
+import ru.avalon.java.dev.j10.labs.models.Passport;
 import ru.avalon.java.dev.j10.labs.models.Person;
 
 
@@ -12,19 +13,24 @@ public class Main {
      * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
      */
     //Main() {
-
-        Person ivanov = new Person ("Иван", "Иванов", "Иванович","Хрустицкого", "14"); // "Хрустицкого 14"
-        Address ivanovAdr = new Address("Хрустицкого", "14");
+		Address ivanovAdr = new Address("Хрустицкого", "14");
+		Passport ivanovPass = new Passport ("Иван", "Иванов", "Иванович");
+        Person ivanov = new Person (ivanovAdr, ivanovPass);
+        
                 System.out.println(ivanov.getFullName());
                 System.out.println(ivanovAdr.getStrAdr());
                 
-        Person smith = new Person ("John", "Edvard", "Smith", 4224, "st.James ave.", "43"); //"st.James ave. 43"
         Address smithAdr = new Address("st.James ave.", "43");
+        Passport smithPass = new Passport ("John", "Edvard", "Smith", 4224);
+        Person smith = new Person (smithAdr, smithPass);        
+
                 System.out.println(smith.getFullName());
                 System.out.println(smithAdr.getStrAdr());
                 
-        Person wiener = new Person ("Norbert", "Wiener", "North Alpine Drive", "116"); //"North Alpine Drive 116"
         Address wienerAdr = new Address("North Alpine Drive", "116");
+        Passport wienerPass = new Passport ("Norbert", "Wiener");
+        Person wiener = new Person (wienerAdr, wienerPass);       
+
                 System.out.println(wiener.getFullName());
                 System.out.println(wienerAdr.getStrAdr());
 	}

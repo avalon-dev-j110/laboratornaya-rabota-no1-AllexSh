@@ -13,57 +13,14 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  * </ol>
  */
 public class Person {
-	private String strName, strSurName, strMidName, strSecName;
-	private int intPassS;
-	private String fullName;// пременная для форматированного текста
 
-	public Person(String strName, String strSurName, String strMidName, String strStreet, String strHouse) {
-		this.strName = strName;
-		this.strSurName = strSurName;
-		this.strMidName = strMidName;
+	private Address address;
+	private Passport passport;
+	private String fullName;
 
-		Passport passport1 = new Passport(strName, strSurName, strMidName);
-		passport1.setStrName(strName);
-		passport1.setStrSurName(strSurName);
-		passport1.setStrMidName(strMidName);
-
-		Address address1 = new Address(strStreet, strHouse);
-		address1.setStrStreet(strStreet);
-		address1.setStrHouse(strHouse);
-		address1.getStrAdr();
-	}
-
-	public Person(String strName, String strSecName, String strSurName, int intPassS, String strStreet,
-			String strHouse) {
-		this.strName = strName;
-		this.strSecName = strSecName;
-		this.strSurName = strSurName;
-		this.intPassS = intPassS;
-
-		Passport passport2 = new Passport(strName, strSecName, strSurName, intPassS);
-		passport2.setStrName(strName);
-		passport2.setStrSecName(strSecName);
-		passport2.setStrSurName(strSurName);
-		passport2.setIntPassS(intPassS);
-
-		Address address2 = new Address(strStreet, strHouse);
-		address2.setStrStreet(strStreet);
-		address2.setStrHouse(strHouse);
-		address2.getStrAdr();
-	}
-
-	public Person(String strName, String strSurName, String strStreet, String strHouse) {
-		this.strName = strName;
-		this.strSurName = strSurName;
-
-		Passport passport3 = new Passport(strName, strSurName);
-		passport3.setStrName(strName);
-		passport3.setStrSurName(strSurName);
-
-		Address address3 = new Address(strStreet, strHouse);
-		address3.setStrStreet(strStreet);
-		address3.setStrHouse(strHouse);
-		address3.getStrAdr();
+	public Person(Address address, Passport passport) {
+		this.passport = passport;
+		this.address = address;
 	}
 	// TODO
 
@@ -88,12 +45,14 @@ public class Person {
 		 * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
 		 */
 		// return null;
-		if (strSecName == null & strMidName != null) // если второго имени нет и есть очество
-			fullName = strName + "\n" + strSurName + "\n" + strMidName;
-		else if (strMidName == strSecName) // если есть только имя и фамилия
-			fullName = strName + "\n" + strSurName;
+		if (passport.getStrSecName() == null & passport.getStrMidName() != null) // если второго имени нет и есть
+																					// очество
+			fullName = passport.getStrName() + "\n" + passport.getStrSurName() + "\n" + passport.getStrMidName();
+		else if (passport.getStrMidName() == passport.getStrSecName()) // если есть только имя и фамилия
+			fullName = passport.getStrName() + "\n" + passport.getStrSurName();
 		else // если есть только второе имя
-			fullName = strName + "\n" + strSecName.charAt(0) + "." + "\n" + strSurName;
+			fullName = passport.getStrName() + "\n" + passport.getStrSecName().charAt(0) + "." + "\n"
+					+ passport.getStrSurName();
 		return fullName;
 	}
 
@@ -113,8 +72,7 @@ public class Person {
 //		// return null;
 //		
 //	}
-//	public String getStrAddress() {
-//		this.strAddress = Address.getStrAdr();
-//		return strAddress;
-//	}
+	public String getStrAddress() {
+		return address.getStrAdr();
+	}
 }

@@ -18,7 +18,7 @@ package ru.avalon.java.dev.j10.labs.models;
  * <li>орган, выдавший документ.
  * </ol>
  */
-public class Passport { // extends Address {
+public class Passport {
 
 	/*
 	 * TODO(Студент): Закончить определение класса.
@@ -42,19 +42,19 @@ public class Passport { // extends Address {
 
 	// три перегрузки конструктора для всех случаев задачи
 	public Passport(String strName, String strSurName, String strMidName) {
-		this.strName = strName; //setStrName();
-		this.strSurName = strSurName; //getStrSurName();
-		this.strMidName = strMidName; //getStrMidName();
+		this.strName = strName;
+		this.strSurName = strSurName;
+		this.strMidName = strMidName;
 	}
 	public Passport(String strName, String strSecName, String strSurName, int intPassS) {
-		this.strName = strName; //getStrName();
-		this.strSecName = strSecName; //getStrSecName();
-		this.strSurName = strSurName; //getStrSurName();
-		this.intPassS = intPassS; //getIntPassS();// доп инициализация для избежания конфликта создания одинаковых конструкторов
+		this.strName = strName;
+		this.strSecName = strSecName;
+		this.strSurName = strSurName; 
+		this.intPassS = intPassS; // доп инициализация для избежания конфликта создания одинаковых конструкторов
 	}
 	public Passport(String strName, String strSurName) {
-		this.strName = strName; //getStrName();
-		this.strSurName = strSurName; //getStrSurName();
+		this.strName = strName;
+		this.strSurName = strSurName;
 	}
 
 	public void setIntPassS(int intPassS) {

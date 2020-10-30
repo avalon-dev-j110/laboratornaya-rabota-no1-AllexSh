@@ -25,14 +25,16 @@ public class Address {
 		this.strStreet = strStreet;
 		this.strHouse = strHouse;
 	}
-	public String getStrAdr() {
-		strAdr = strStreet +" "+ strHouse;
-		return strAdr;
-	}
 	public void setStrHouse(String strHouse) {
 		this.strHouse = strHouse;
 	}
 	public void setStrStreet(String strStreet) {
 		this.strStreet = strStreet;
 	}
+	
+	public String getStrAdr() {
+		strAdr = strStreet +" "+ strHouse;
+		return strAdr;
+	}
+	
 }
